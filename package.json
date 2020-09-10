@@ -1,0 +1,26 @@
+{
+  "name": "react-native-comparison-table",
+  "version": "1.0.0",
+  "description": "Comparison table with fixed header for React Native",
+  "main": "index.js",
+  "nativePackage": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Darold So",
+    "email": "daroldso@gmail.com",
+    "url": ""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash.get": "^4.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "prop-types": "^15.7.2",
+    "react-test-renderer": "16.13.1"
+  }
+}
