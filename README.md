@@ -4,7 +4,7 @@
 
 Comparison table with fixed header for React Native
 
-<img src="screenShots/demo-ios.png" width="320"/>
+<img src="https://user-images.githubusercontent.com/9425789/92948433-f1a56000-f48b-11ea-8751-4175b8061d17.gif" />
 
 ## Getting started
 
