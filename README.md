@@ -115,7 +115,7 @@ import {
   </ComparisonTable>
 ```
 
-Check out the [example project](example) for more examples.
+Check out the [example project](examples) for more examples.
 
 ## Props
 
