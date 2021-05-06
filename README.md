@@ -1,6 +1,5 @@
 # `react-native-comparison-table`
-
-![MIT License](https://img.shields.io/npm/l/@react-native-community/checkbox.svg) [![npm version](https://img.shields.io/npm/v/@react-native-community/checkbox.svg?style=flat)](https://www.npmjs.com/package/@react-native-community/checkbox)
+![MIT License](https://img.shields.io/npm/l/react-native-comparison-table.svg) [![npm version](https://img.shields.io/npm/v/react-native-comparison-table.svg?style=flat)](https://www.npmjs.com/package/react-native-comparison-table)
 
 Comparison table with fixed header for React Native
 
