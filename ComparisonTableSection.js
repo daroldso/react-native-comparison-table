@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Animated,
   Dimensions,
   Text,
-  TouchableOpacity,
   View,
   StyleSheet
 } from 'react-native';
@@ -42,12 +41,12 @@ const ComparisonTableSection = (props) => {
       {React.Children.map(children, (child, index) =>
         child
           ? React.cloneElement(child, {
-              isHighlightBest,
-              innerScrollX,
-              scrollY,
-              headerCellWidth,
-              cellWidth
-            })
+            isHighlightBest,
+            innerScrollX,
+            scrollY,
+            headerCellWidth,
+            cellWidth
+          })
           : null
       )}
     </View>

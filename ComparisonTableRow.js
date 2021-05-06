@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Animated, Dimensions, Text, View, StyleSheet } from 'react-native';
 import get from 'lodash.get';
-// import { getFormattedCurrency } from '~/utils/units'
 
 const ComparisonTableRow = (props) => {
   const {
@@ -19,12 +18,12 @@ const ComparisonTableRow = (props) => {
     bestCellStyle,
     bestCellTextStyle,
     mergeCells,
-
     isHighlightBest,
     headerCellWidth,
     cellWidth,
     innerScrollX,
-    scrollY
+    scrollY,
+    direction = 'rtl',
   } = props;
 
   let bestValueIndices = [];
@@ -97,7 +96,7 @@ const ComparisonTableRow = (props) => {
               {
                 translateX: innerScrollX.interpolate({
                   inputRange: [0, 1000],
-                  outputRange: [0, 1000],
+                  outputRange: [0, direction == 'rtl' ? -1000 : 1000],
                   extrapolate: 'clamp'
                 })
               }
@@ -108,8 +107,8 @@ const ComparisonTableRow = (props) => {
         {typeof headerCellContent === 'function' ? (
           headerCellContent()
         ) : (
-          <Text style={styles.headerCellText}>{headerCellContent}</Text>
-        )}
+            <Text style={styles.headerCellText}>{headerCellContent}</Text>
+          )}
       </Animated.View>
     );
   }
@@ -161,18 +160,18 @@ const ComparisonTableRow = (props) => {
         styles.row,
         rowStyle,
         fixed &&
-          scrollY && {
-            ...styles.fixedRow,
-            transform: [
-              {
-                translateY: scrollY.interpolate({
-                  inputRange: [0, 10000],
-                  outputRange: [0, 10000],
-                  extrapolate: 'clamp'
-                })
-              }
-            ]
-          }
+        scrollY && {
+          ...styles.fixedRow,
+          transform: [
+            {
+              translateY: scrollY.interpolate({
+                inputRange: [0, 10000],
+                outputRange: [0, 10000],
+                extrapolate: 'clamp'
+              })
+            }
+          ]
+        }
       ]}
     >
       {headerCellContent !== undefined && renderHeaderCellContent()}
@@ -200,44 +199,44 @@ const ComparisonTableRow = (props) => {
             : null}
         </Animated.View>
       ) : (
-        data.map((item, index) => {
-          const isBest =
-            bestValueIndices.includes(index) &&
-            isHighlightBest &&
-            !isAllValuesEqual;
-          return (
-            <View
-              style={[
-                styles.cell,
-                cellStyle,
-                { width: cellWidth },
-                isBest && mergedBestCellStyle
-              ]}
-              key={index}
-            >
-              {typeof cellContent === 'function' ? (
-                renderCustomCellContent(
-                  cellContent,
-                  index,
-                  item,
-                  isBest,
-                  mergedBestCellTextStyle
-                )
-              ) : (
-                <Text
-                  style={[
-                    styles.cellText,
-                    cellTextAlign && { textAlign: cellTextAlign },
-                    isBest && mergedBestCellTextStyle
-                  ]}
-                >
-                  {renderTemplateCellContent(cellContent, item)}
-                </Text>
-              )}
-            </View>
-          );
-        })
-      )}
+          data.map((item, index) => {
+            const isBest =
+              bestValueIndices.includes(index) &&
+              isHighlightBest &&
+              !isAllValuesEqual;
+            return (
+              <View
+                style={[
+                  styles.cell,
+                  cellStyle,
+                  { width: cellWidth },
+                  isBest && mergedBestCellStyle
+                ]}
+                key={index}
+              >
+                {typeof cellContent === 'function' ? (
+                  renderCustomCellContent(
+                    cellContent,
+                    index,
+                    item,
+                    isBest,
+                    mergedBestCellTextStyle
+                  )
+                ) : (
+                    <Text
+                      style={[
+                        styles.cellText,
+                        cellTextAlign && { textAlign: cellTextAlign },
+                        isBest && mergedBestCellTextStyle
+                      ]}
+                    >
+                      {renderTemplateCellContent(cellContent, item)}
+                    </Text>
+                  )}
+              </View>
+            );
+          })
+        )}
     </Animated.View>
   );
 };

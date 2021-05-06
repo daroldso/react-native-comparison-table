@@ -1,6 +1,5 @@
 # `react-native-comparison-table`
-
-![MIT License](https://img.shields.io/npm/l/@react-native-community/checkbox.svg) [![npm version](https://img.shields.io/npm/v/@react-native-community/checkbox.svg?style=flat)](https://www.npmjs.com/package/@react-native-community/checkbox)
+![MIT License](https://img.shields.io/npm/l/react-native-comparison-table.svg) [![npm version](https://img.shields.io/npm/v/react-native-comparison-table.svg?style=flat)](https://www.npmjs.com/package/react-native-comparison-table)
 
 Comparison table with fixed header for React Native
 
@@ -151,6 +150,7 @@ Check out the [example project](examples) for more examples.
 | bestCellStyle     | object          | The style of the cell containing best value. Expected to apply to `<View>`                                                                                                                                                                                                         |         |
 | bestCellTextStyle | object          | The text style of the cell containing best value. Expected to apply to `<Text>`                                                                                                                                                                                                    |         |
 | mergeCells        | boolean         | Merges the body cells. Combining with empty `headerCellContent` and custom `cellContent`, you can create a row with custom content                                                                                                                                                 | false   |
+| direction         | string          | direction ot table - can be 'ltr' or 'rtl'                  | 'ltr'   |
 
 ## Contributors
 
