@@ -150,6 +150,7 @@ Check out the [example project](examples) for more examples.
 | bestCellStyle     | object          | The style of the cell containing best value. Expected to apply to `<View>`                                                                                                                                                                                                         |         |
 | bestCellTextStyle | object          | The text style of the cell containing best value. Expected to apply to `<Text>`                                                                                                                                                                                                    |         |
 | mergeCells        | boolean         | Merges the body cells. Combining with empty `headerCellContent` and custom `cellContent`, you can create a row with custom content                                                                                                                                                 | false   |
+| direction         | string          | direction ot table - can be 'ltr' or 'rtl'                  | 'ltr'   |
 
 ## Contributors
 
